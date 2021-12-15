@@ -10,6 +10,10 @@ const theme = {
     default: {
         background: dark,
         text: light,
+    },
+    header: {
+        text: light,
+        background: primary,
     }
 }
 
