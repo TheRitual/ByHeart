@@ -10,8 +10,4 @@ const MainMenu = ({ navigation }) => {
     );
 };
 
-MainMenu.navigationOptions = {
-    headerTitle: 'ByHeart',
-};
-
 export default MainMenu;
