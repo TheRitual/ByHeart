@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: theme.dark,
     },
-    square: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '1%',
+    logo: {
+        flex: 4,
+    },
+    menu: {
+        flex: 6,
     },
     background: {
         width: '100%',
@@ -31,17 +31,19 @@ const MainMenu = ({ navigation }) => {
         menuContainer: {
             flexDirection: dimensions.isLandscape ? 'row' : 'column',
         },
-        square: {
-            width: dimensions.isLandscape ? '49%' : '100%',
-            height: dimensions.isLandscape ? '98%' : '100%',
+        logo: {
+            paddingLeft: dimensions.isLandscape ? '5%' : 0,
+        },
+        menu: {
+            paddingTop: dimensions.isLandscape ? '5%' : '1%',
         }
     }
 
     return (
         <SafeAreaView style={styles.screen}>
             <ImageBackground style={{ ...styles.background, ...calculatedStyles.menuContainer }} source={require('../../assets/images/background.png')} resizeMode='cover'>
-                <Logo style={{ ...styles.square, ...calculatedStyles.square }} />
-                <Menu style={{ ...styles.square, ...calculatedStyles.square }} />
+                <Logo style={{ ...styles.logo, ...calculatedStyles.logo }} />
+                <Menu style={{ ...styles.menu, ...calculatedStyles.menu }} />
             </ImageBackground>
         </SafeAreaView>
     );
