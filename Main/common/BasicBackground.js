@@ -7,7 +7,7 @@ const BasicBackground = (props) => {
     return (
         <ImageBackground
             {...props}
-            style={{ width: '100%', height: '100%', ...props.style }}
+            style={{ width: '100%', height: '100%', flex: 1, ...props.style }}
             source={uri}
             resizeMode='cover'>
             {props.children}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
 import useDimensions from '../../utils/useDimensions';
 import BasicBackground from '../common/BasicBackground';
 import BasicButton from '../common/BasicButton';
@@ -12,6 +12,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: theme.dark,
     },
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: 50,
+    },
 });
 
 const AddTextScreen = ({ navigation }) => {
@@ -20,10 +27,12 @@ const AddTextScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.screen}>
             <BasicBackground>
-                <Text style={{ color: theme.light }}> Add Text Screen </Text>
-                <BasicButton onPress={() => navigation.navigate('MainMenu')}>
-                    Back
-                </BasicButton>
+                <View style={styles.container}>
+                    <Text style={{ color: theme.light }}> Add Text Screen </Text>
+                    <BasicButton onPress={() => navigation.navigate('MainMenu')}>
+                        Back
+                    </BasicButton>
+                </View>
             </BasicBackground>
         </SafeAreaView>
     );
