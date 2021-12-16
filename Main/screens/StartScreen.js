@@ -3,6 +3,7 @@ import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
 import useDimensions from '../../utils/useDimensions';
 import BasicBackground from '../common/BasicBackground';
 import BasicButton from '../common/BasicButton';
+import Title from '../common/Title';
 import theme from '../theme/default';
 
 const styles = StyleSheet.create({
@@ -28,7 +29,7 @@ const StartScreen = ({ navigation }) => {
         <SafeAreaView style={styles.screen}>
             <BasicBackground>
                 <View style={styles.container}>
-                    <Text style={{ color: theme.light }}> Start Screen </Text>
+                    <Title> Select a Mode </Title>
                     <BasicButton onPress={() => navigation.navigate('MainMenu')}>
                         Back
                     </BasicButton>

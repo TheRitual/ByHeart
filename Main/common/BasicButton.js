@@ -8,11 +8,11 @@ const styles = StyleSheet.create({
     text: {
         color: theme.accent,
         fontFamily: 'retro',
-        fontSize: 50,
+        fontSize: 40,
         textShadowColor: theme.secondary,
         textShadowOffset: { width: 0, height: 0 },
         textShadowRadius: 20,
-        lineHeight: 45,
+        lineHeight: 35,
     },
     container: {
         padding: 10,
