@@ -11,11 +11,12 @@ const styles = StyleSheet.create({
 });
 
 const Menu = (props) => {
+    const { goTo } = props;
     return (
         <View {...props} style={{ ...props.style, ...styles.container }}>
-            <MenuButton>Start</MenuButton>
-            <MenuButton>Add Text</MenuButton>
-            <MenuButton>Options</MenuButton>
+            <MenuButton onPress={() => goTo('Start')}>Start</MenuButton>
+            <MenuButton onPress={() => goTo('AddText')}>Add Text</MenuButton>
+            <MenuButton onPress={() => goTo('Options')}>Options</MenuButton>
         </View>
     );
 }

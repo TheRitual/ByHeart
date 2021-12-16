@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, ImageBackground } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import useDimensions from '../../utils/useDimensions';
 import BasicBackground from '../common/BasicBackground';
 import Logo from '../modules/mainMenu/Logo';
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const MainMenu = ({ navigation }) => {
+const MainMenuScreen = ({ navigation }) => {
     const dimensions = useDimensions();
 
     const calculatedStyles = {
@@ -40,10 +40,10 @@ const MainMenu = ({ navigation }) => {
         <SafeAreaView style={styles.screen}>
             <BasicBackground style={calculatedStyles.menuContainer}>
                 <Logo style={{ ...styles.logo, ...calculatedStyles.logo }} />
-                <Menu style={{ ...styles.menu, ...calculatedStyles.menu }} />
+                <Menu style={{ ...styles.menu, ...calculatedStyles.menu }} goTo={navigation.navigate} />
             </BasicBackground>
         </SafeAreaView>
     );
 };
 
-export default MainMenu;
+export default MainMenuScreen;

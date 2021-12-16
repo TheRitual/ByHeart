@@ -1,11 +1,23 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import MainMenu from '../screens/MainMenu';
+import AddTextScreen from "../screens/AddTextScreen";
+import MainMenuScreen from "../screens/MainMenuScreen";
+import OptionsScreen from "../screens/OptionsScreen";
+import StartScreen from "../screens/StartScreen";
 import theme from '../theme/default';
 
 const Navigator = createStackNavigator({
     MainMenu: {
-        screen: MainMenu,
+        screen: MainMenuScreen,
+    },
+    Start: {
+        screen: StartScreen,
+    },
+    AddText: {
+        screen: AddTextScreen,
+    },
+    Options: {
+        screen: OptionsScreen,
     },
 }, {
     defaultNavigationOptions: {
