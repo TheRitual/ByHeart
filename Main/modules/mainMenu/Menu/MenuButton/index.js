@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
         color: theme.light,
         fontFamily: 'retro',
         fontSize: 50,
+        textShadowColor: theme.primary,
+        textShadowOffset: { width: 0, height: 0 },
+        textShadowRadius: 20,
     },
 });
 

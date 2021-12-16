@@ -1,3 +1,4 @@
+import colorAlpha from 'color-alpha';
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -5,12 +6,17 @@ import theme from '../theme/default';
 
 const styles = StyleSheet.create({
     text: {
-        color: theme.light,
+        color: theme.accent,
         fontFamily: 'retro',
         fontSize: 50,
+        textShadowColor: theme.secondary,
+        textShadowOffset: { width: 0, height: 0 },
+        textShadowRadius: 20,
+        lineHeight: 45,
     },
     container: {
-        backgroundColor: theme.dark,
+        padding: 10,
+        borderRadius: 20,
     }
 });
 
