@@ -6,7 +6,6 @@ import theme from '../theme/default';
 const Navigator = createStackNavigator({
     MainMenu: {
         screen: MainMenu,
-
     },
 }, {
     defaultNavigationOptions: {
