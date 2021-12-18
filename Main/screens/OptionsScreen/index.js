@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import BasicButton from '../../common/BasicButton';
 import ScreenContainer from '../../common/ScreenContainer';
 import Title from '../../common/Title';
-import TextBox from './TextBox';
-import monologue from './TextBox/monologue';
-import convertText from '../../../utils/convertText';
 
 const styles = StyleSheet.create({
     container: {
@@ -17,20 +14,10 @@ const styles = StyleSheet.create({
     },
 });
 
-const AddTextScreen = ({ navigation }) => {
-    const [inputValue, setInputValue] = useState(monologue);
-
-    const inputChangeHandler = (text) => {
-        setInputValue(text);
-    }
-
+const OptionsScreen = ({ navigation }) => {
     return (
         <ScreenContainer style={styles.container}>
-            <Title> Add Text </Title>
-            <TextBox value={inputValue} onChangeText={inputChangeHandler} />
-            <BasicButton onPress={() => console.log(convertText(inputValue))}>
-                Add
-            </BasicButton>
+            <Title> Options </Title>
             <BasicButton onPress={() => navigation.navigate('MainMenu')}>
                 Back
             </BasicButton>
@@ -38,4 +25,4 @@ const AddTextScreen = ({ navigation }) => {
     );
 };
 
-export default AddTextScreen;
+export default OptionsScreen;
