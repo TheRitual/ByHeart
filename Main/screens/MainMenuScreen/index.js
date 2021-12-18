@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import useDimensions from '../../../utils/useDimensions';
-import Logo from './Logo';
-import Menu from './Menu';
+import ScreenContainer from '../../common/ScreenContainer';
+import Logo from "./Logo";
+import Menu from "./Menu";
 
 const styles = StyleSheet.create({
     logo: {
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const MainMenu = ({ navigation }) => {
+const MainMenuScreen = ({ navigation }) => {
     const dimensions = useDimensions();
 
     const calculatedStyles = StyleSheet.create({
@@ -26,11 +27,11 @@ const MainMenu = ({ navigation }) => {
     });
 
     return (
-        <>
+        <ScreenContainer>
             <Logo style={{ ...styles.logo, ...calculatedStyles.logo }} />
             <Menu style={{ ...styles.menu, ...calculatedStyles.menu }} goTo={navigation.navigate} />
-        </>
+        </ScreenContainer>
     );
-}
+};
 
-export default MainMenu;
+export default MainMenuScreen;

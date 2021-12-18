@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import convertText from '../../../utils/convertText';
+import { StyleSheet } from 'react-native';
 import useDimensions from '../../../utils/useDimensions';
 import BasicButton from '../../common/BasicButton';
+import ScreenContainer from '../../common/ScreenContainer';
 import Title from '../../common/Title';
 import TextBox from './TextBox';
 import monologue from './TextBox/monologue';
+import convertText from '../../../utils/convertText';
 
 const styles = StyleSheet.create({
     container: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const AddText = ({ navigation }) => {
+const AddTextScreen = ({ navigation }) => {
     const dimensions = useDimensions();
     const [inputValue, setInputValue] = useState(monologue);
 
@@ -30,7 +31,7 @@ const AddText = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.container}>
+        <ScreenContainer style={styles.container}>
             <Title> Add Text </Title>
             <TextBox value={inputValue} onChangeText={inputChangeHandler} />
             <BasicButton onPress={() => console.log(convertText(inputValue))}>
@@ -39,8 +40,8 @@ const AddText = ({ navigation }) => {
             <BasicButton onPress={() => navigation.navigate('MainMenu')}>
                 Back
             </BasicButton>
-        </View>
+        </ScreenContainer>
     );
-}
+};
 
-export default AddText;
+export default AddTextScreen;

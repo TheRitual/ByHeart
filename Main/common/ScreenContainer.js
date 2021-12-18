@@ -24,7 +24,7 @@ const ScreenContainer = (props) => {
 
     return (
         <SafeAreaView style={styles.screen}>
-            <BasicBackground {...props} style={{ ...calculatedStyles.menuContainer, ...props.styles }}>
+            <BasicBackground {...props} style={{ ...calculatedStyles.menuContainer, ...props.style }}>
                 {props.children}
             </BasicBackground>
         </SafeAreaView>
