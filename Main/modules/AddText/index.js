@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import convertText from '../../../utils/convertText';
 import useDimensions from '../../../utils/useDimensions';
 import BasicButton from '../../common/BasicButton';
 import Title from '../../common/Title';
@@ -26,10 +27,6 @@ const AddText = ({ navigation }) => {
 
     const inputChangeHandler = (text) => {
         setInputValue(text);
-    }
-
-    const convertText = (text) => {
-        return text;
     }
 
     return (
