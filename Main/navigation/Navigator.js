@@ -1,6 +1,7 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import AddTextScreen from "../screens/AddTextScreen";
+import GuessNextScreen from "../screens/GuessNextScreen";
 import MainMenuScreen from "../screens/MainMenuScreen";
 import OptionsScreen from "../screens/OptionsScreen";
 import StartScreen from "../screens/StartScreen";
@@ -18,6 +19,9 @@ const Navigator = createStackNavigator({
     },
     Options: {
         screen: OptionsScreen,
+    },
+    GuessNext: {
+        screen: GuessNextScreen,
     },
 }, {
     defaultNavigationOptions: {

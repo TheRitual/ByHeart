@@ -14,10 +14,14 @@ const styles = StyleSheet.create({
     },
 });
 
-const OptionsScreen = ({ navigation }) => {
+const OptionsScreen = ({ navigation }) => {   
+
     return (
         <ScreenContainer style={styles.container}>
             <Title> Select Mode </Title>
+            <BasicButton onPress={() => navigation.navigate('GuessNext')}>
+                Guess Next
+            </BasicButton>
             <BasicButton onPress={() => navigation.navigate('MainMenu')}>
                 Back
             </BasicButton>
