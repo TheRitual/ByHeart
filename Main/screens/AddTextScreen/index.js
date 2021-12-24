@@ -6,6 +6,8 @@ import Title from '../../common/Title';
 import TextBox from './TextBox';
 import monologue from './TextBox/monologue';
 import convertText from '../../../utils/convertText';
+import { useDispatch } from 'react-redux';
+import { setText } from '../../store/reducers/mainSlice';
 
 const styles = StyleSheet.create({
     container: {
@@ -18,17 +20,23 @@ const styles = StyleSheet.create({
 });
 
 const AddTextScreen = ({ navigation }) => {
+    const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState(monologue);
 
     const inputChangeHandler = (text) => {
         setInputValue(text);
     }
 
+    const saveTextHandler = () => {
+        const converted = convertText(inputValue);
+        dispatch(setText(converted));
+    }
+
     return (
         <ScreenContainer style={styles.container}>
             <Title> Add Text </Title>
             <TextBox value={inputValue} onChangeText={inputChangeHandler} />
-            <BasicButton onPress={() => console.log(convertText(inputValue))}>
+            <BasicButton onPress={saveTextHandler}>
                 Add
             </BasicButton>
             <BasicButton onPress={() => navigation.navigate('MainMenu')}>
