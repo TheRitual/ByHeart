@@ -15,7 +15,7 @@ const Menu = (props) => {
     return (
         <View {...props} style={{ ...props.style, ...styles.container }}>
             <MenuButton onPress={() => goTo('Start')}>Start</MenuButton>
-            <MenuButton onPress={() => goTo('AddText')}>Add Text</MenuButton>
+            <MenuButton onPress={() => goTo('AddText')}>Manage Texts</MenuButton>
             <MenuButton onPress={() => goTo('Options')}>Options</MenuButton>
         </View>
     );

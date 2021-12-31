@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         paddingVertical: 50,
     },
     textContainer: {
-        backgroundColor: theme.light,
+        backgroundColor: 'transparent',
         flex: 3,
         borderRadius: 20,
         margin: 20,
@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
     },
     lyrics: {
         flex: 1,
-        fontSize: 20,
+        fontSize: 25,
+        textAlignVertical: 'center',
+        textAlign: 'right',
     },
     buttonsContainer: {
         flex: 7,
@@ -51,7 +53,6 @@ const GuessNextScreen = ({ navigation }) => {
         setDisplay(takeLast(words, cursor, 10));
     }, [cursor]);
 
-
     return (
         <ScreenContainer style={styles.container}>
             <Title> Guess Next </Title>
@@ -59,11 +60,11 @@ const GuessNextScreen = ({ navigation }) => {
                 <View style={styles.textContainer}>
                     <Text style={styles.lyrics}>
                         {display.map((word, index) => {
-                            const alpha = 1 - (10 - index) * (1 / display.length);
+                            const alpha = 1 - (display.length - index) * 0.1;
                             return (
                                 <Text
                                     key={index}
-                                    style={{ color: colorAlpha('#000', alpha) }}>
+                                    style={{ color: colorAlpha(theme.light, alpha) }}>
                                     {word.original}{` `}
                                 </Text>
                             )
