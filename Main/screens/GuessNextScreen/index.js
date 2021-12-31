@@ -8,6 +8,9 @@ import theme from '../../theme/default';
 import { useSelector } from 'react-redux';
 import colorAlpha from 'color-alpha';
 import AnswerButton from '../../common/AnswerButton';
+import takeLast from '../../../utils/takeLast';
+import takeNext from '../../../utils/takeNext';
+import shuffleArray from '../../../utils/shuffleArray';
 
 const styles = StyleSheet.create({
     container: {
@@ -59,22 +62,13 @@ const GuessNextScreen = ({ navigation }) => {
     const textArray = useSelector(selectText);
     const words = textArray.words;
 
-    const takeLast = (words, index, amount) => {
-        const first = index - amount < 0 ? 0 : index - amount;
-        return words.slice(first, index);
-    }
-
-    const takeNext = (words, index, amount) => {
-        const last = index + amount > words.length ? words.length - amount : index + amount;
-        const result = words.slice(index, last);
-        return result;
-    }
-
     useEffect(() => {
         setDisplay(takeLast(words, cursor, 20));
-        const next = takeNext(words, cursor, 12);
-        setAnswers(next);
+        const next = takeNext(words, cursor, 20);
+        setAnswers(shuffleArray(next, 12));
     }, [cursor]);
+
+
 
     const answerReactionHandler = () => {
         setCursor(cursor + 1);

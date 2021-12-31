@@ -15,7 +15,7 @@ const style = StyleSheet.create({
     },
     text: {
         flex: 1,
-        fontSize: 20,
+        fontSize: 18,
         color: theme.light,
         textAlign: 'center',
         textAlignVertical: 'center',
